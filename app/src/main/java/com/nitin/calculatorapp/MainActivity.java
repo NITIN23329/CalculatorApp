@@ -132,7 +132,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String newNumberString = newNumber.getText().toString();
-                if(newNumberString.isEmpty() || newNumberString.charAt(0)!='-')newNumberString = '-'+ newNumberString;
+                if (newNumberString.isEmpty() || newNumberString.charAt(0) != '-')
+                    newNumberString = '-' + newNumberString;
                 else newNumberString = newNumberString.substring(1);
                 newNumber.setText(newNumberString);
             }
@@ -165,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             Double.parseDouble(newNumber.getText().toString());
         } catch (NumberFormatException e) {
-            newNumber.setText(null);
+            newNumber.setText("");
         }
     }
 
@@ -175,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
         pendingOperation = savedInstanceState.getString(KEY_FOR_PENDING_OPERATION);
         // although our pendingState is successfully reloaded, but our currentOperation TextView should be updated as well
         if (pendingOperation != null) {
-            if (pendingOperation.equals("=")) currentOperation.setText(null);
+            if (pendingOperation.equals("=")) currentOperation.setText("");
             else currentOperation.setText(pendingOperation);
         }
     }
