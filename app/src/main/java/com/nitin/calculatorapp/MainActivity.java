@@ -126,6 +126,17 @@ public class MainActivity extends AppCompatActivity {
                 currentOperation.setText("");
             }
         });
+        // it will toggle the sign of newNumber
+        Button buttonNegative = findViewById(R.id.buttonNegative);
+        buttonNegative.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String newNumberString = newNumber.getText().toString();
+                if(newNumberString.isEmpty() || newNumberString.charAt(0)!='-')newNumberString = '-'+ newNumberString;
+                else newNumberString = newNumberString.substring(1);
+                newNumber.setText(newNumberString);
+            }
+        });
 
     }
 
